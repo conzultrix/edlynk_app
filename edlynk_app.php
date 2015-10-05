@@ -37,7 +37,7 @@ function create_app_post_type() {
     'public'                => true,
     'rewrite'               => array('slug' => 'apps'),
     'menu_postion'          => 5,
-    'supports'              => array('title','editor', 'thumbnail', 'custom-fields'),
+    'supports'              => array('title','editor'),
   );
   
   register_post_type('edlynk_app', $args);
