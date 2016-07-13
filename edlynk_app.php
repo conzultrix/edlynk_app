@@ -80,4 +80,88 @@ function create_app_type_taxonomies() {
     register_taxonomy( 'app type', array( 'edlynk_app' ), $args );
 }
 
+
+// export custom field
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_edlynk-app',
+		'title' => 'edLynk App',
+		'fields' => array (
+			array (
+				'key' => 'field_560fad6f50bb3',
+				'label' => 'App Caption',
+				'name' => 'app_caption',
+				'type' => 'text',
+				'instructions' => 'App tag line',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5754239031adc',
+				'label' => 'App Banner',
+				'name' => 'app_banner',
+				'type' => 'image',
+				'instructions' => 'Wide image around 1600 x 560 px',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_560fab9850bb2',
+				'label' => 'App Image',
+				'name' => 'app_image',
+				'type' => 'image',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_560fade150bb4',
+				'label' => 'App Summary',
+				'name' => 'app_summary',
+				'type' => 'textarea',
+				'instructions' => 'Summarise key feature or benefits in 150 characters',
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'br',
+			),
+			array (
+				'key' => 'field_575428687b9c8',
+				'label' => 'Key Features',
+				'name' => 'key_features',
+				'type' => 'wysiwyg',
+				'instructions' => 'A formatted list of key benefits',
+				'default_value' => '',
+				'toolbar' => 'basic',
+				'media_upload' => 'no',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'edlynk_app',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
 ?>
